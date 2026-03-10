@@ -1,0 +1,22 @@
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+    font-family: Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+.form-item-custom {
+    display: flex;
+    align-items: center;
+}
+
+.form-item-label {
+    width: 120px;
+    margin-bottom: 0px;
+    margin-right: 1px;
+    text-align: right;
+}
+
+.bootstrap-table .fixed-table-pagination > .pagination-detail,
+.bootstrap-table .fixed-table-pagination > .pagination {
+     margin-top: 0px;
+     margin-bottom: 0px;
+}
+
