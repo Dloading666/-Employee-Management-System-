@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.cqie.eams.mapper.PostLevelMapper">
-    <resultMap id="PostLevelResultMap" type="edu.cqie.eams.domain.PostLevel">
+<mapper namespace="edu.com.eams.mapper.PostLevelMapper">
+    <resultMap id="PostLevelResultMap" type="edu.com.eams.domain.PostLevel">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="level" column="level"/>
@@ -18,12 +18,12 @@
         SELECT * FROM emp_post_level WHERE id = #{id}
     </select>
 
-    <insert id="insert" parameterType="edu.cqie.eams.domain.PostLevel">
+    <insert id="insert" parameterType="edu.com.eams.domain.PostLevel">
         INSERT INTO emp_post_level(name, level, salary, sort_code, status)
         VALUES(#{name}, #{level}, #{salary}, #{sortCode}, #{status})
     </insert>
 
-    <update id="update" parameterType="edu.cqie.eams.domain.PostLevel">
+    <update id="update" parameterType="edu.com.eams.domain.PostLevel">
         UPDATE emp_post_level SET
             name=#{name}, level=#{level}, salary=#{salary}, sort_code=#{sortCode}, status=#{status}
         WHERE id=#{id}

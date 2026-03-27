@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.cqie.eams.mapper.DepartmentMapper">
-    <resultMap id="DepartmentResultMap" type="edu.cqie.eams.domain.Department">
+<mapper namespace="edu.com.eams.mapper.DepartmentMapper">
+    <resultMap id="DepartmentResultMap" type="edu.com.eams.domain.Department">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="managerUserId" column="manager_user_id"/>
@@ -18,12 +18,12 @@
         SELECT * FROM sys_dept WHERE id = #{id}
     </select>
 
-    <insert id="insert" parameterType="edu.cqie.eams.domain.Department">
+    <insert id="insert" parameterType="edu.com.eams.domain.Department">
         INSERT INTO sys_dept(name, manager_user_id, parent_id, sort_code, status)
         VALUES(#{name}, #{managerUserId}, #{parentId}, #{sortCode}, #{status})
     </insert>
 
-    <update id="update" parameterType="edu.cqie.eams.domain.Department">
+    <update id="update" parameterType="edu.com.eams.domain.Department">
         UPDATE sys_dept SET
             name=#{name}, manager_user_id=#{managerUserId}, parent_id=#{parentId},
             sort_code=#{sortCode}, status=#{status}

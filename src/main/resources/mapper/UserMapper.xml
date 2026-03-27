@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.cqie.eams.mapper.UserMapper">
-    <resultMap id="BaseResultMap" type="edu.cqie.eams.domain.User">
+<mapper namespace="edu.com.eams.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="edu.com.eams.domain.User">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="account" property="account" />
@@ -14,6 +14,13 @@
         SELECT id, name, account, password, status
         FROM sys_user
         WHERE account = #{account} AND password = #{password}
+        LIMIT 1
+    </select>
+
+    <select id="findByAccount" resultMap="BaseResultMap">
+        SELECT id, name, account, password, status
+        FROM sys_user
+        WHERE account = #{account}
         LIMIT 1
     </select>
 
@@ -31,13 +38,13 @@
     </select>
 
     <!-- 新增用户 -->
-    <insert id="insert" parameterType="edu.cqie.eams.domain.User" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insert" parameterType="edu.com.eams.domain.User" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO sys_user (name, account, password, status)
         VALUES (#{name}, #{account}, #{password}, #{status})
     </insert>
 
     <!-- 更新用户 -->
-    <update id="update" parameterType="edu.cqie.eams.domain.User">
+    <update id="update" parameterType="edu.com.eams.domain.User">
         UPDATE sys_user
         SET name = #{name},
             account = #{account},

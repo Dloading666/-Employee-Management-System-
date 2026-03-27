@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.cqie.eams.mapper.EmployeeMapper">
-    <resultMap id="EmployeeResultMap" type="edu.cqie.eams.domain.Employee">
+<mapper namespace="edu.com.eams.mapper.EmployeeMapper">
+    <resultMap id="EmployeeResultMap" type="edu.com.eams.domain.Employee">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="code" column="code"/>
@@ -36,7 +36,7 @@
         SELECT * FROM emp WHERE id = #{id}
     </select>
 
-    <insert id="insert" parameterType="edu.cqie.eams.domain.Employee">
+    <insert id="insert" parameterType="edu.com.eams.domain.Employee">
         INSERT INTO emp(
             name, code, email, mobile, id_card, birthday, sex, nation_code, political_code, native_place, graduate_school, major_code, highest_education_code, highest_degree_code, habitation, marital_status, entry_date, leave_date, dept_id, post_level_id, user_id, role_type, status
         ) VALUES (
@@ -44,7 +44,7 @@
         )
     </insert>
 
-    <update id="update" parameterType="edu.cqie.eams.domain.Employee">
+    <update id="update" parameterType="edu.com.eams.domain.Employee">
         UPDATE emp SET
             name=#{name}, code=#{code}, email=#{email}, mobile=#{mobile}, id_card=#{idCard}, birthday=#{birthday}, sex=#{sex}, nation_code=#{nationCode}, political_code=#{politicalCode}, native_place=#{nativePlace}, graduate_school=#{graduateSchool}, major_code=#{majorCode}, highest_education_code=#{highestEducationCode}, highest_degree_code=#{highestDegreeCode}, habitation=#{habitation}, marital_status=#{maritalStatus}, entry_date=#{entryDate}, leave_date=#{leaveDate}, dept_id=#{deptId}, post_level_id=#{postLevelId}, user_id=#{userId}, role_type=#{roleType}, status=#{status}
         WHERE id=#{id}

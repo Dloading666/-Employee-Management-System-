@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.cqie.eams.mapper.AttendanceMapper">
-    <resultMap id="AttendanceResultMap" type="edu.cqie.eams.domain.Attendance">
+<mapper namespace="edu.com.eams.mapper.AttendanceMapper">
+    <resultMap id="AttendanceResultMap" type="edu.com.eams.domain.Attendance">
         <id property="id" column="id"/>
         <result property="userId" column="user_id"/>
         <result property="userName" column="user_name"/>
@@ -20,11 +20,11 @@
     <select id="getById" parameterType="long" resultMap="AttendanceResultMap">
         SELECT * FROM emp_attendance_record WHERE id = #{id}
     </select>
-    <insert id="insert" parameterType="edu.cqie.eams.domain.Attendance">
+    <insert id="insert" parameterType="edu.com.eams.domain.Attendance">
         INSERT INTO emp_attendance_record (user_id, user_name, attendance_date, check_in_time, check_out_time, work_hours, status, remark)
         VALUES (#{userId}, #{userName}, #{attendanceDate}, #{checkInTime}, #{checkOutTime}, #{workHours}, #{status}, #{remark})
     </insert>
-    <update id="update" parameterType="edu.cqie.eams.domain.Attendance">
+    <update id="update" parameterType="edu.com.eams.domain.Attendance">
         UPDATE emp_attendance_record
         SET user_id=#{userId}, user_name=#{userName}, attendance_date=#{attendanceDate}, check_in_time=#{checkInTime}, check_out_time=#{checkOutTime}, work_hours=#{workHours}, status=#{status}, remark=#{remark}
         WHERE id=#{id}
